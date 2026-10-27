@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cafetería Grace</title>
+<meta name="description" content="Cafetería Grace: café con leche con medialunas, bollería artesanal y horario amplio todos los días.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fbf4e9;--paper:#fffaf2;--coffee:#3b2417;--roast:#6b3f26;--caramel:#c9853d;--terra:#b4532a;--mut:#7a6556;--line:#ead9c2;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--cream);color:var(--coffee);font:17px/1.65 Inter,system-ui,sans-serif;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
+.w{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(251,244,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 1.3rem Fraunces,Georgia,serif;color:var(--coffee);text-decoration:none}
+.logo i{color:var(--terra);font-style:normal}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--terra);color:#fff;border:0;border-radius:999px;padding:0 26px;min-height:48px;font:600 1rem Inter,sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 6px 16px rgba(180,83,42,.28)}
+.btn.sm{min-height:40px;padding:0 18px;font-size:.9rem;box-shadow:none}
+.btn.ghost{background:transparent;color:var(--coffee);border:2px solid var(--coffee);box-shadow:none}
+.hero{background:radial-gradient(circle at 80% 10%,#f3d9b0 0,transparent 45%),linear-gradient(160deg,#fbf4e9,#f1dfc2);padding:56px 0 64px;text-align:center;overflow:hidden}
+.eyebrow{display:inline-block;font:600 .8rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.hero h1{font-size:clamp(2.8rem,13vw,5.6rem);font-weight:800;margin-bottom:16px}
+.hero p{max-width:32ch;margin:0 auto 28px;color:var(--roast);font-size:1.15rem}
+.cta{display:flex;flex-direction:column;gap:12px;align-items:center}
+@media(min-width:520px){.cta{flex-direction:row;justify-content:center}}
+.cup{font-size:4rem;margin-bottom:6px}
+section{padding:64px 0}
+h2{font-size:clamp(1.9rem,6vw,2.6rem);font-weight:800;margin-bottom:12px}
+.lead{color:var(--mut);margin:0 0 28px;max-width:52ch}
+.special{background:var(--coffee);color:#fbf4e9;border-radius:28px;padding:36px 24px;display:grid;gap:20px}
+.special .eyebrow{color:var(--caramel)}
+.special h2{color:#fff}
+.special p{margin:0;color:#e7d3bb}
+.price{font:800 3.2rem Fraunces,serif;color:var(--caramel);line-height:1}
+.price small{display:block;font:600 .8rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#e7d3bb;margin-top:6px}
+@media(min-width:720px){.special{grid-template-columns:1fr auto;align-items:center;padding:48px}}
+.grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(min-width:720px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px 16px;text-align:center}
+.card .e{font-size:2.2rem;display:block;margin-bottom:8px}
+.card b{display:block;font:600 1rem Fraunces,serif}
+.card span{font-size:.88rem;color:var(--mut)}
+.alt{background:var(--paper);border-block:1px solid var(--line)}
+.hours{max-width:460px}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.hours b{font-weight:600}.hours span{color:var(--roast);text-align:right}
+form{display:grid;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:24px;max-width:560px}
+label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
+input,textarea{font:inherit;font-size:16px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--coffee);width:100%}
+input:focus,textarea:focus{outline:3px solid rgba(201,133,61,.45);border-color:var(--caramel)}
+.hp{position:absolute;left:-9999px}
+#msg{min-height:1.5em;font-weight:600}.ok{color:#2e7d32}.err{color:#b3261e}
+footer{background:var(--coffee);color:#e7d3bb;text-align:center;padding:32px 20px;font-size:.9rem}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="logo" href="#">Cafetería <i>Grace</i></a><a class="btn sm" href="#contacto">Escríbenos</a></div></header>
+<div class="hero"><div class="w">
+<div class="cup" aria-hidden="true">☕</div>
+<span class="eyebrow">Cafetería de barrio</span>
+<h1>Cafetería Grace</h1>
+<p>Café recién hecho, medialunas calentitas y una mesa esperándote.</p>
+<div class="cta"><a class="btn" href="#especialidad">Nuestra especialidad</a><a class="btn ghost" href="#horario">Ver horario</a></div>
+</div></div>
+<section id="especialidad"><div class="w">
+<div class="special">
+<div><span class="eyebrow">Nuestra especialidad</span><h2>Café con leche con 3 medialunas</h2><p>El desayuno y la merienda de siempre, a un precio de barrio.</p></div>
+<div class="price">4,50€<small>Café + 3 medialunas</small></div>
+</div>
+</div></section>
+<section class="alt"><div class="w">
+<h2>Bollería artesanal</h2>
+<p class="lead">Elaborada a mano, para acompañar tu café a cualquier hora.</p>
+<div class="grid">
+<div class="card"><span class="e" aria-hidden="true">🥐</span><b>Medialunas</b><span>Dulces y recién horneadas</span></div>
+<div class="card"><span class="e" aria-hidden="true">🥖</span><b>Croissants</b><span>Hojaldre artesanal</span></div>
+<div class="card"><span class="e" aria-hidden="true">🍰</span><b>Tartas caseras</b><span>Al corte, cada día</span></div>
+<div class="card"><span class="e" aria-hidden="true">🍪</span><b>Galletas</b><span>Para llevar o quedarte</span></div>
+</div>
+</div></section>
+<section id="horario"><div class="w">
+<h2>Horario</h2>
+<p class="lead">Abrimos todos los días.</p>
+<div class="hours">
+<div><b>Lunes a viernes</b><span>07:00 – 21:00</span></div>
+<div><b>Sábados</b><span>09:00 – 24:00</span></div>
+<div><b>Domingos</b><span>09:30 – 23:00</span></div>
+</div>
+</div></section>
+<section id="contacto" class="alt"><div class="w">
+<h2>Contacto</h2>
+<p class="lead">Escríbenos y te respondemos.</p>
+<form id="f" novalidate>
+<label>Nombre<input name="nombre" autocomplete="name" required maxlength="80"></label>
+<label>Email<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+<label>Mensaje<textarea name="mensaje" rows="4" required maxlength="1000"></textarea></label>
+<input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn" type="submit" id="b">Enviar mensaje</button>
+<div id="msg" role="status" aria-live="polite"></div>
+</form>
+</div></section>
+<footer>© Cafetería Grace</footer>
+<script>
+var f=document.getElementById('f'),m=document.getElementById('msg'),b=document.getElementById('b');
+function show(t,c){m.textContent=t;m.className=c||''}
+f.addEventListener('submit',async function(e){
+  e.preventDefault();
+  var d=Object.fromEntries(new FormData(f));
+  if(!d.nombre.trim()||!d.mensaje.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email.trim())){show('Revisa nombre, email y mensaje.','err');return}
+  b.disabled=true;show('Enviando…');
+  try{
+    var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    if(!r.ok)throw new Error();
+    f.reset();show('¡Gracias! Hemos recibido tu mensaje.','ok');
+  }catch(x){show('No se pudo enviar. Inténtalo de nuevo.','err')}
+  b.disabled=false;
+});
+</script>
+</body>
+</html>
