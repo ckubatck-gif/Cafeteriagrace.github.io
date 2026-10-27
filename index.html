@@ -9,14 +9,14 @@
 <style>
 :root{--cream:#fbf4e9;--paper:#fffaf2;--coffee:#3b2417;--roast:#6b3f26;--caramel:#c9853d;--terra:#b4532a;--mut:#7a6556;--line:#ead9c2;--r:18px}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
 body{margin:0;background:var(--cream);color:var(--coffee);font:17px/1.65 Inter,system-ui,sans-serif;-webkit-text-size-adjust:100%}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
 .w{max-width:1040px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:0;z-index:10;background:rgba(251,244,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0)}
-header .w{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font:800 1.3rem Fraunces,Georgia,serif;color:var(--coffee);text-decoration:none}
-.logo i{color:var(--terra);font-style:normal}
+header .w{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:block;line-height:0}
+.logo img{height:60px;width:auto;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--terra);color:#fff;border:0;border-radius:999px;padding:0 26px;min-height:48px;font:600 1rem Inter,sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 6px 16px rgba(180,83,42,.28)}
 .btn.sm{min-height:40px;padding:0 18px;font-size:.9rem;box-shadow:none}
 .btn.ghost{background:transparent;color:var(--coffee);border:2px solid var(--coffee);box-shadow:none}
@@ -57,7 +57,7 @@ footer{background:var(--coffee);color:#e7d3bb;text-align:center;padding:32px 20p
 </style>
 </head>
 <body>
-<header><div class="w"><a class="logo" href="#">Cafetería <i>Grace</i></a><a class="btn sm" href="#contacto">Escríbenos</a></div></header>
+<header><div class="w"><a class="logo" href="#" aria-label="Cafetería Grace, inicio"><img src="logo-grace.png" alt="Cafetería Grace" width="644" height="536"></a><a class="btn sm" href="#contacto">Escríbenos</a></div></header>
 <div class="hero"><div class="w">
 <img class="foto" src="foto-cafeteria.jpg" alt="Dos cafés en tazas de Cafetería Grace, con tarta de queso, zumo de naranja y tostados" width="974" height="1000" fetchpriority="high">
 <span class="eyebrow">Cafetería de barrio</span>
